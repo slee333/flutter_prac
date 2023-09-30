@@ -12,19 +12,19 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
+    return const MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
+            padding: EdgeInsets.symmetric(horizontal: 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
+                SizedBox(
                   height: 40,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Column(
@@ -48,27 +48,27 @@ class App extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
-                const Text(
+                Text(
                   "Total Balance",
                   style: TextStyle(
                     color: Color.fromARGB(174, 255, 255, 255),
                     fontSize: 16,
                   ),
                 ),
-                const Text(
+                Text(
                   "\$ 2,322,120",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 15,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Button(
@@ -83,10 +83,10 @@ class App extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 25,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
@@ -107,34 +107,31 @@ class App extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
-                const CurrencyCard(
+                CurrencyCard(
                   currencyName: "Euro",
                   currencyAcronym: "EUR",
                   amount: "5,323",
                   currencyIcon: Icons.euro_rounded,
+                  order: 0,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -15),
-                  child: const CurrencyCard(
-                    currencyName: "Dollar",
-                    currencyAcronym: "USD",
-                    amount: "1,393",
-                    currencyIcon: Icons.attach_money_rounded,
-                    isDark: false,
-                  ),
+                CurrencyCard(
+                  currencyName: "Dollar",
+                  currencyAcronym: "USD",
+                  amount: "1,393",
+                  currencyIcon: Icons.attach_money_rounded,
+                  isDark: false,
+                  order: -2,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -30),
-                  child: const CurrencyCard(
-                    currencyName: "Bitcoin",
-                    currencyAcronym: "BTC",
-                    amount: "3.200",
-                    currencyIcon: Icons.currency_bitcoin_rounded,
-                    isDark: true,
-                  ),
+                CurrencyCard(
+                  currencyName: "Bitcoin",
+                  currencyAcronym: "BTC",
+                  amount: "3.200",
+                  currencyIcon: Icons.currency_bitcoin_rounded,
+                  isDark: true,
+                  order: -4,
                 )
               ],
             ),
